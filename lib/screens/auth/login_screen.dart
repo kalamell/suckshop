@@ -1,5 +1,4 @@
 import 'package:appecommerce/screens/auth/signup_screen.dart';
-import 'package:appecommerce/screens/onboarding_screen.dart';
 import 'package:appecommerce/screens/welcome_screen.dart';
 import 'package:appecommerce/theme/theme.dart';
 import 'package:appecommerce/widgets/custom_text_field.dart';
@@ -7,12 +6,31 @@ import 'package:appecommerce/widgets/gradient_button.dart';
 import 'package:appecommerce/widgets/social_login_button.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+
+
+class _LoginScreenState extends State<LoginScreen> {
+  final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+
+  @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
+    
     return Scaffold(
       body: SingleChildScrollView(
         child: SizedBox(
@@ -123,16 +141,21 @@ class LoginScreen extends StatelessWidget {
                             color: AppTheme.textSecondary
                           )
                         ),
-                        SizedBox(height: 32,),
+                        
+                        SizedBox(height: 39,),
                         CustomTextField(
                           label: "อีเมล", 
                           prefixIcon: Icons.email_outlined,
                           keyboardType: TextInputType.emailAddress,
+                          //controller: _emailController,
                           validator: (value) {
+                            //print(value);
                             if(value == null || value.isEmpty) {
+
                               return 'กรุณากรอกข้อมูล';
                             }
                             if (!value.contains('@')) {
+                              print("FDJFKDJFKFJDKFJDKFJDKFJDKFJDKF");
                               return 'กรุณากรอกอีเมล';
                             }
                             return null;
@@ -145,6 +168,7 @@ class LoginScreen extends StatelessWidget {
                           prefixIcon: Icons.lock_outline,
                           isPassword: true,
                           keyboardType: TextInputType.visiblePassword,
+                          //controller: _passwordController,
                           validator: (value) {
                             if(value == null || value.isEmpty) {
                               return 'กรุณากรอกข้อมูล';

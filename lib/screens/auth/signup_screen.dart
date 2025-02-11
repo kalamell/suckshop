@@ -141,6 +141,7 @@ class SignUpScreen extends StatelessWidget {
                         SizedBox(height: 16,),
                         CustomTextField(
                           label: "อีเมล", 
+                         
                           prefixIcon: Icons.email_outlined,
                           keyboardType: TextInputType.emailAddress,
                           validator: (value) {
@@ -157,6 +158,7 @@ class SignUpScreen extends StatelessWidget {
                         SizedBox(height: 16,),
                         CustomTextField(
                           label: "รหัสผ่าน", 
+                          
                           prefixIcon: Icons.lock_outline,
                           isPassword: true,
                           keyboardType: TextInputType.visiblePassword,
@@ -173,6 +175,7 @@ class SignUpScreen extends StatelessWidget {
                         SizedBox(height: 16,),
                         CustomTextField(
                           label: "ยืนยันรหัสผ่าน", 
+                          
                           prefixIcon: Icons.lock_outline,
                           isPassword: true,
                           keyboardType: TextInputType.visiblePassword,
