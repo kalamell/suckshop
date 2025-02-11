@@ -1,4 +1,5 @@
 import 'package:appecommerce/screens/auth/login_screen.dart';
+import 'package:appecommerce/screens/auth/verify_screen.dart';
 import 'package:appecommerce/screens/welcome_screen.dart';
 import 'package:appecommerce/theme/theme.dart';
 import 'package:appecommerce/widgets/custom_text_field.dart';
@@ -193,7 +194,11 @@ class SignUpScreen extends StatelessWidget {
                         SizedBox(height: 24,),
                         GradientButton(
                           text: "สมัครสมาชิก", 
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => VerifyScreen(),),
+                            );
+                          },
                         ),
                         SizedBox(height: 24,),
                         Center(

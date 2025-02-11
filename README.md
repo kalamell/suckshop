@@ -1,4 +1,4 @@
-# appecommerce
+# SUCH SHOP FLUTTER APP
 
 A new Flutter project.
 
