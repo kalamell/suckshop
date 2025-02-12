@@ -1,4 +1,6 @@
+import 'package:appecommerce/screens/auth/forgot_screen.dart';
 import 'package:appecommerce/screens/auth/signup_screen.dart';
+import 'package:appecommerce/screens/choose_language.dart';
 import 'package:appecommerce/screens/welcome_screen.dart';
 import 'package:appecommerce/theme/theme.dart';
 import 'package:appecommerce/widgets/custom_text_field.dart';
@@ -182,7 +184,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         Align(
                           alignment: Alignment.centerRight,
                           child: TextButton(
-                            onPressed: () {}, 
+                            onPressed: () {
+                              Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => ForgotScreen(),),
+                                  );
+                            }, 
                             style: TextButton.styleFrom(
                               foregroundColor: AppTheme.primaryColor
                             ),
@@ -192,7 +198,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         SizedBox(height: 24,),
                         GradientButton(
                           text: "เข้าสู่ระบบ", 
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => ChooseLanguage(),),
+                                  );
+                          },
                         ),
                         SizedBox(height: 24,),
                         Center(
@@ -234,9 +244,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               TextButton(
                                 onPressed: () {
-                                   Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => SignUpScreen(),),
-                              );
+                                  Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => SignUpScreen(),),
+                                  );
                                 }, 
                                 child: Text(
                                   'คลิกสมัคร'
